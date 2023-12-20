@@ -4,7 +4,7 @@ local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
 -- Replace "AnimationId" with the ID of the animation you want to use
-local animationId = "rbxassetid://181526230"
+local animationId = "rbxassetid://33796059"
 
 -- Load the animation
 local animation = Instance.new("Animation")
@@ -16,3 +16,8 @@ local animationTrack = humanoid:LoadAnimation(animation)
 
 -- Play the animation
 animationTrack:Play()
+
+-- Print "works" when the animation is played
+animationTrack.Stopped:Connect(function()
+    print("works")
+end)
